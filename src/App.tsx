@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { Briefcase } from 'lucide-react';
+import { Palette } from 'lucide-react';
 import { ProjectCard } from './components/ProjectCard';
 import { CategoryFilter } from './components/CategoryFilter';
 import { ProjectDetail } from './pages/ProjectDetail';
@@ -35,7 +35,7 @@ function App() {
                     transition={{ delay: 0.2 }}
                     className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6"
                   >
-                    <Briefcase className="w-8 h-8 text-white" />
+                    <Palette className="w-8 h-8 text-white" />
                   </motion.div>
                   <motion.h1
                     initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ function App() {
                     transition={{ delay: 0.4 }}
                     className="text-4xl md:text-5xl font-bold mb-4"
                   >
-                    Creative Portfolio
+                    Portfolio
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -51,8 +51,7 @@ function App() {
                     transition={{ delay: 0.6 }}
                     className="text-gray-600 max-w-2xl mx-auto"
                   >
-                    Showcasing a collection of innovative projects across web development,
-                    mobile applications, and design work.
+                    A collection of portfolio of Joel.
                   </motion.p>
                 </div>
               </motion.header>
