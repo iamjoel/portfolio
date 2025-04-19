@@ -2,6 +2,9 @@
 A modern portfolio showcase template to display your projects beautifully.
 
 ## Features
+<img width="300" alt="Portfolio list page" src="https://github.com/user-attachments/assets/fd5694f5-d722-484f-95cc-a7f111795e56" /><br/>
+<img width="300" alt="Portfolio detail page" src="https://github.com/user-attachments/assets/0ee02cb7-3392-4f44-90a8-c559dec4ca6c" />
+
 - Project showcase with categories
 - Responsive design
 - Easy to customize
