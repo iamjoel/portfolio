@@ -23,8 +23,8 @@ export const ProjectDetail: React.FC = () => {
 
 
         // Load the config and description
-        const configModule = await import(`/src/projects/${id}/config.ts`);
-        const description = await import(`/src/projects/${id}/description.md?raw`);
+        const configModule = await import(`../projects/${id}/config.ts`);
+        const description = await import(`../projects/${id}/description.md?raw`);
 
         setProject(configModule.default);
         setMarkdown(description.default);

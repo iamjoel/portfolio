@@ -5,6 +5,7 @@ import { Palette } from 'lucide-react';
 import { ProjectCard } from './components/ProjectCard';
 import { CategoryFilter } from './components/CategoryFilter';
 import { ProjectDetail } from './pages/ProjectDetail';
+import siteConfig from './data/site';
 import { projects } from './data/projects';
 import { Category } from './types';
 
@@ -43,7 +44,7 @@ function App() {
                     transition={{ delay: 0.4 }}
                     className="text-4xl md:text-5xl font-bold mb-4"
                   >
-                    Portfolio
+                    {siteConfig.title}
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -51,7 +52,7 @@ function App() {
                     transition={{ delay: 0.6 }}
                     className="text-gray-600 max-w-2xl mx-auto"
                   >
-                    A collection of portfolio of Joel.
+                    {siteConfig.description}
                   </motion.p>
                 </div>
               </motion.header>
