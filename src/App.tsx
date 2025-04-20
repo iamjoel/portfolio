@@ -5,6 +5,7 @@ import { Palette } from 'lucide-react';
 import { ProjectCard } from './components/ProjectCard';
 import { CategoryFilter } from './components/CategoryFilter';
 import { ProjectDetail } from './pages/ProjectDetail';
+import { EmptyState } from './components/EmptyState';
 import siteConfig from './data/site';
 import { projects } from './data/projects';
 import { Category } from './data/site';
@@ -63,25 +64,29 @@ function App() {
                   onCategoryChange={setActiveCategory}
                 />
 
-                <motion.div
-                  layout
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                  <AnimatePresence>
-                    {filteredProjects.map((project) => (
-                      <motion.div
-                        key={project.id}
-                        layout
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ProjectCard project={project} />
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
-                </motion.div>
+                {filteredProjects.length > 0 ? (
+                  <motion.div
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                  >
+                    <AnimatePresence>
+                      {filteredProjects.map((project) => (
+                        <motion.div
+                          key={project.id}
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <ProjectCard project={project} />
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
+                  </motion.div>
+                ) : (
+                  <EmptyState />
+                )}
               </main>
             </div>
           }
