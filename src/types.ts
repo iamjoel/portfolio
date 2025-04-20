@@ -22,5 +22,3 @@ export interface ProjectConfig {
   githubLink?: string;
   technologies: string[];
 }
-
-export type Category = 'all' | 'web' | 'mobile' | 'design';

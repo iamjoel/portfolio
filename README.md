@@ -59,9 +59,20 @@ export const projects: Project[] = [
 ## Setting the website
 Setting the website in `/src/data/site.ts`:
 ```
+export enum Category {
+  'all' = 'all',
+  'web' = 'web',
+  ...
+}
+
 const site = {
   title: 'Portfolio',
   description: 'A collection of portfolios.',
+  categories: [
+    { id: Category.all, label: 'All Works' },
+    { id: Category.web, label: 'Web Development' },
+    ...
+  ]
 }
 ```
 

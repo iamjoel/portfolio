@@ -7,10 +7,10 @@ import { CategoryFilter } from './components/CategoryFilter';
 import { ProjectDetail } from './pages/ProjectDetail';
 import siteConfig from './data/site';
 import { projects } from './data/projects';
-import { Category } from './types';
+import { Category } from './data/site';
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [activeCategory, setActiveCategory] = useState<Category>(Category.all);
   const location = useLocation();
 
   const filteredProjects = projects.filter(
