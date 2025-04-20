@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 import { Link } from 'react-router-dom';
+import { categories } from '../data/site'
 
 interface ProjectCardProps {
   project: Project;
@@ -19,8 +20,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         className="bg-white rounded-xl overflow-hidden shadow-lg transition-shadow hover:shadow-xl"
       >
         <div className="relative group">
-          <img 
-            src={project.imageUrl} 
+          <img
+            src={project.imageUrl}
             alt={project.title}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -32,7 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
           <p className="text-gray-600 text-sm mb-4">{project.description}</p>
           <span className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-            {project.category}
+            {categories.find(c => c.id === project.category)?.label || project.category}
           </span>
         </div>
       </motion.div>
