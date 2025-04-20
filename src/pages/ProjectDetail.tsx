@@ -21,7 +21,6 @@ export const ProjectDetail: React.FC = () => {
         setLoading(true);
         setError(null);
 
-
         // Load the config and description
         const configModule = await import(`../projects/${id}/config.ts`);
         const description = await import(`../projects/${id}/description.md?raw`);
