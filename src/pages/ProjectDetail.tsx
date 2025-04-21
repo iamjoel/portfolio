@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { ProjectCarousel } from '../components/ProjectCarousel';
 import { ProjectConfig } from '../types';
 import { Github, Link as LinkIcon } from 'lucide-react';
@@ -112,7 +113,12 @@ export const ProjectDetail: React.FC = () => {
           )}
 
           <div className="prose prose-lg max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {markdown}
+            </ReactMarkdown>
           </div>
         </div>
       </main>

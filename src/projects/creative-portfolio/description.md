@@ -1,5 +1,4 @@
 ## Creative Portfolio Website
-<!-- ![](https://raw.githubusercontent.com/iamjoel/quote-card-generator/main/demo.jpg) -->
 
 This modern portfolio website showcases the perfect blend of design and functionality. Built with React and enhanced with Framer Motion animations, it delivers a seamless user experience across all devices.
 
@@ -32,3 +31,6 @@ The development process focused on creating a performant and visually appealing 
 - Search functionality
 - Project tags
 - Contact form integration
+
+### Img tag test
+<img src="/public/favicon.ico" width="50" />
