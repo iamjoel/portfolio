@@ -19,7 +19,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="relative h-[500px] overflow-hidden">
+    <div className="relative h-[200px] sm:h-[300px] md:h-[300px] lg:h-[500px] overflow-hidden">
       <AnimatePresence initial={false} mode="wait">
         <motion.img
           key={currentIndex}

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* code in markdown  */
+.code-wrap {
+  width: 500px;
+  max-width: 100%;
+}
