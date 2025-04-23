@@ -18,6 +18,7 @@ const site = {
   title: 'Portfolio',
   description: 'A collection of portfolios.',
   categories,
+  githubRepo: 'https://github.com/iamjoel/portfolio-template'
 }
 
 export default site

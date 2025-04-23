@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import GithubCorner from './components/GithubCorner';
 import { Palette } from 'lucide-react';
 import { ProjectCard } from './components/ProjectCard';
 import { CategoryFilter } from './components/CategoryFilter';
@@ -25,6 +26,7 @@ function App() {
           path="/"
           element={
             <div className="min-h-screen bg-gray-50">
+              <GithubCorner />
               <motion.header
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
