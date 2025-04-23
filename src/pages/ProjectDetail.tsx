@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { ProjectCarousel } from '../components/ProjectCarousel';
 import { ProjectConfig } from '../types';
-import { Github, Link as LinkIcon } from 'lucide-react';
+import { Github, Link as LinkIcon, Home } from 'lucide-react';
 
 export const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -65,6 +65,12 @@ export const ProjectDetail: React.FC = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-gray-50"
     >
+      <Link
+        className='z-10 absolute top-2 left-2 hidden md:flex w-8 h-8 bg-black items-center justify-center rounded-full cursor-pointer'
+        to='/'
+      >
+        <Home className="w-4 h-4 text-white" />
+      </Link>
       {project.images && project.images.length > 0 && (
         <ProjectCarousel images={project.images} />
       )}
