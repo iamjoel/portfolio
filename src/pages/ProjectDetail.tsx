@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import { ProjectCarousel } from '../components/ProjectCarousel';
 import { ProjectConfig } from '../types';
 import { Github, Link as LinkIcon, Home } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -77,36 +78,33 @@ export const ProjectDetail: React.FC = () => {
 
       <main className="container mx-auto px-4 py-12">
         <div className="bg-white rounded-xl shadow-lg p-8">
-          <div className="flex items-center justify-between mb-8">
+          <div className="md:flex items-center justify-between mb-8">
             <h1 className="text-4xl font-bold">{project.title}</h1>
-            <div className="flex gap-4">
+            <div className="mt-2 md:mt-0 flex space-x-1.5">
               {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                <Button
+                  size='icon'
+                  title='Github'
+                  onClick={() => window.open(project.githubLink, '_blank')}
                 >
                   <Github className="w-5 h-5" />
-                  GitHub
-                </a>
+                </Button>
               )}
               {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors"
+                <Button
+                  variant="outline"
+                  size='icon'
+                  title='项目预览地址'
+                  onClick={() => window.open(project.link, '_blank')}
                 >
                   <LinkIcon className="w-5 h-5" />
-                  Live Demo
-                </a>
+                </Button>
               )}
             </div>
           </div>
 
           {project.technologies && project.technologies.length > 0 && (
-            <div className="flex gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-8">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
